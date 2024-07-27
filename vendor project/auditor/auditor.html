@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auditor</title>
+    <link rel="stylesheet" href="audi.css">
+</head>
+<body>
+    <div class="name">
+        Web page for Auditor
+    </div>
+    <div class="form-container">
+        <h2>Audit Form</h2>
+        <form id="form-details" method="post" class="form" name="google-sheet">
+            <div class="form-group">
+                <label for="dept_name">Department Name</label>
+                <input type="text" id="dept_name" name="dept_name" required>
+            </div>
+            <div class="form-group">
+                <label for="auditor_name">Auditor Name</label>
+                <input type="text" id="auditor_name" name="auditor_name" required>
+            </div>
+            <div class="form-group">
+                <label for="audit_date">Audit Date</label>
+                <input type="date" id="audit_date" name="audit_date" required>
+            </div>
+            <div class="form-group">
+                <label for="audit_type">Audit Type</label>
+                <input type="text" id="audit_type" name="audit_type" required>
+            </div>
+            <div class="form-group">
+                <label for="audit_scope">Audit Scope</label>
+                <textarea id="audit_scope" name="audit_scope" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="audit_objectives">Audit Objectives</label>
+                <textarea id="audit_objectives" name="audit_objectives" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="findings">Findings</label>
+                <textarea id="findings" name="findings" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="recommendations">Recommendations</label>
+                <textarea id="recommendations" name="recommendations" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="action_plan">Action Plan</label>
+                <textarea id="action_plan" name="action_plan" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="completion_date">Completion Date</label>
+                <input type="date" id="completion_date" name="completion_date" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <input type="text" id="status" name="status" required>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="follow_up_date">Follow-up Date</label>
+                <input type="date" id="follow_up_date" name="follow_up_date">
+            </div>
+            <div class="form-group">
+                <label for="compliance_status">Compliance Status</label>
+                <select id="compliance_status" name="compliance_status" required>
+                    <option value="Compliant">Compliant</option>
+                    <option value="Non-compliant">Non-compliant</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="risk_level">Risk Level</label>
+                <select id="risk_level" name="risk_level" required>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="audit.js"></script>
+</body>
+</html>

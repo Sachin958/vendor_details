@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditor Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  
+</style>
+<body>
+    
+        <div class="heading">
+            <h2>Auditor Report</h2>
+        </div>
+
+        <div class="content">
+            <!-- Form code here -->
+            
+        </div>
+        <div class="btn">
+            <button id="btn">Download</button>
+        </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const data = JSON.parse(localStorage.getItem('formData'));
+            const contentDiv = document.querySelector('.content');
+            if(data == null){
+                    contentDiv.innerHTML = `<p> Project Approved </p>`
+                    document.getElementById('btn').innerHTML = "";
+                    document.getElementById('btn').style.visibility = 'hidden';
+                    // return
+                }
+                if(data){
+                    contentDiv.innerHTML =  `<h2> Project is in running </h2>`
+                }
+
+            if (data) {
+                // Append data to the content div
+                contentDiv.innerHTML = `
+                    <p>Department Name&nbsp;: &nbsp; <span>${data.dept_name}</span></p>
+                    <p>Auditor Name&nbsp;: &nbsp;<span>${data.auditor_name}</span></p>
+                    <p>Audit Date&nbsp;:&nbsp; <span>${data.audit_date}</span></p>
+                    <p>Audit Type&nbsp;: &nbsp;<span>${data.audit_type}</span></p>
+                    <p>Audit Scope&nbsp;:&nbsp; <span>${data.audit_scope}</span></p>
+                    <p>Audit Objectives&nbsp;:&nbsp; <span>${data.audit_objectives}</span></p>
+                    <p>Findings&nbsp;:&nbsp; <span>${data.findings}</span></p>
+                    <p>Recommendations&nbsp;:&nbsp; <span>${data.recommendations}</span></p>
+                    <p>Action Plan&nbsp;:&nbsp; <span>${data.action_plan}</span></p>
+                    <p>Completion Date&nbsp;:&nbsp; <span>${data.completion_date}</span></p>
+                    <p>Status&nbsp;: &nbsp;<span>${data.status}</span></p>
+                    <p>Comments&nbsp;:&nbsp; <span>${data.comments}</span></p>
+                    <p>Follow-up Date&nbsp;:&nbsp; <span>${data.follow_up_date}</span></p>
+                    <p>Compliance Status&nbsp;:&nbsp; <span>${data.compliance_status}</span></p>
+                    <p>Risk Level&nbsp;:&nbsp; <span>${data.risk_level}</span></p>
+                `;
+            } else {
+                console.log('No data found in localStorage.');
+            }
+        });
+    </script>
+    <script src="details.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+</body>
+</html>
